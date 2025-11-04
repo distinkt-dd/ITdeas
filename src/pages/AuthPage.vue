@@ -1,3 +1,5 @@
 <template>
-  <h3>Авторизация</h3>
+  <router-link to="/registration">
+    К регистрации
+  </router-link>
 </template>

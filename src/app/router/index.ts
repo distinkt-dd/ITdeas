@@ -27,8 +27,9 @@ const routes: RouteRecordRaw[] = [
     component: AuthPage,
     meta: {
       layout: 'sign',
-      title: 'ITdeas | Авторизация'
-    }
+      title: 'ITdeas | Авторизация',
+      pageType: 'auth',
+    },
   },
   {
     path: '/registration',
@@ -36,9 +37,10 @@ const routes: RouteRecordRaw[] = [
     component: RegistrationPage,
     meta: {
       layout: 'sign',
-      title: 'ITdeas | Регистрация'
-    }
-  }
+      title: 'ITdeas | Регистрация',
+      pageType: 'registration',
+    },
+  },
 ]
 
 const router = createRouter({
