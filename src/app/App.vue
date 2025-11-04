@@ -6,11 +6,13 @@
 import { useRoute } from 'vue-router'
 import { computed, type Component } from 'vue'
 import MainLayout from '@layouts/main-layout/MainLayout.vue'
+import SignLayout from '@layouts/sign-layout/SignLayout.vue'
 
 const route = useRoute()
 
 const layouts: Record<string, Component> = {
   main: MainLayout,
+  sign: SignLayout,
 }
 
 const layout = computed(() => {

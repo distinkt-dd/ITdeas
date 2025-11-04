@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-import IdeaFeedPage from '@/pages/IdeaFeedPage.vue'
+import IdeaFeedPage from '@pages/IdeaFeedPage.vue'
+import AuthPage from '@pages/AuthPage.vue'
+import RegistrationPage from '@pages/RegistrationPage.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -19,6 +21,24 @@ const routes: RouteRecordRaw[] = [
       title: 'ITdeas | Лента идей',
     },
   },
+  {
+    path: '/auth',
+    name: 'Авторизация',
+    component: AuthPage,
+    meta: {
+      layout: 'sign',
+      title: 'ITdeas | Авторизация'
+    }
+  },
+  {
+    path: '/registration',
+    name: 'Регистрация',
+    component: RegistrationPage,
+    meta: {
+      layout: 'sign',
+      title: 'ITdeas | Регистрация'
+    }
+  }
 ]
 
 const router = createRouter({
