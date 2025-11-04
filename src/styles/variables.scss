@@ -1,0 +1,46 @@
+@use 'helpers/index' as *;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #ffa500;
+  --color-light-highlighter: #302e53;
+  --color-dark-hightlighter: #1b1a2a;
+  --color-very-dark: #080715;
+  --color-red: #ff3535;
+  --color-gray: #6e6e6e;
+  --color-default-elipse-fiol: #473cfb;
+
+  --color-font-main: var(--color-white);
+  --color-font-span: var(--color-accent);
+  --color-border-accent: var(--color-accent);
+  --color-border-main: var(--color-light-highlighter);
+  --color-heart-active: var(--color-red);
+  --color-heart-notactive: var(--color-white);
+  --color-placeholder: var(--color-gray);
+  --color-outline: var(--color-white);
+  --color-title-main: var(--color-white);
+
+  --background-body: var(--color-very-dark);
+  --background-elements: var(--color-dark-hightlighter);
+  --background-button-active: var(--color-accent);
+  --background-wrapper: var(--color-black);
+
+  --gradient-button: radial-gradient(
+    170.23% 282.39% at -64.02% 210.29%,
+    var(--color-accent) 0%,
+    var(--color-default-elipse-fiol) 100%
+  );
+
+  --border-width-sm: 2px;
+  --border-width-md: 3px;
+  --border-radius-sm: 10px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 20px;
+
+  --container-app-width: 1640px;
+  --font-family-base: 'Manrope', sans-serif;
+  --container-padding-x: 15px;
+  --transition-duration: 0.2s;
+  --transition-duration-longer: 0.4s;
+}

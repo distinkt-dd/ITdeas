@@ -1,11 +1,9 @@
 <template>
-  <header>
-    <h1 class="h1">sdf</h1>
-  </header>
+  <header class="visually-hidden"></header>
   <main class="main">
     <router-view></router-view>
   </main>
-  <footer></footer>
+  <footer class="visually-hidden"></footer>
 </template>
 
 <script setup lang="ts"></script>

@@ -1,3 +1,4 @@
+import '@styles'
 import { createApp } from 'vue'
 import App from '@/app/App.vue'
 import router from '@/app/router'
