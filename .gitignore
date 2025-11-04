@@ -15,14 +15,20 @@ coverage
 *.local
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# VSCode specific (дополнительная защита)
+.vscode/*
+!*.code-workspace
+!.vscode/launch.json
+!.vscode/tasks.json
 
 *.tsbuildinfo
 

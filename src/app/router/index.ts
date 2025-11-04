@@ -1,14 +1,13 @@
-import {createRouter, createWebHistory} from 'vue-router'
-import type {RouteRecordRaw} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import IdeaFeedPage from '@/pages/IdeaFeedPage.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    layout: string,
-    title: string,
+    layout: string
+    title: string
   }
 }
-
 
 const routes: RouteRecordRaw[] = [
   {
@@ -17,9 +16,9 @@ const routes: RouteRecordRaw[] = [
     component: IdeaFeedPage,
     meta: {
       layout: 'main',
-      title: 'ITdeas | Лента идей'
-    }
-  }
+      title: 'ITdeas | Лента идей',
+    },
+  },
 ]
 
 const router = createRouter({
@@ -32,7 +31,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const title: string = to.meta.title
 
-  if(title) {
+  if (title) {
     document.title = title
   } else {
     document.title = 'ITdeas'
@@ -41,4 +40,4 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-export default router;
+export default router
