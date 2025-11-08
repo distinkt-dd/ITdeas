@@ -5,8 +5,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { computed, type Component } from 'vue'
-import MainLayout from '@layouts/main-layout/MainLayout.vue'
-import SignLayout from '@layouts/sign-layout/SignLayout.vue'
+import MainLayout from '@shared/ui/layouts/main-layout/MainLayout.vue'
+import SignLayout from '@shared/ui/layouts/sign-layout/SignLayout.vue'
 
 const route = useRoute()
 

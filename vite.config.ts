@@ -14,19 +14,19 @@ export default defineConfig({
     extensions: ['.ts', '.tsx', '.js', '.vue'],
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
       '@pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
       '@router': fileURLToPath(new URL('./src/app/router', import.meta.url)),
-      '@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
-      '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/app/styles', import.meta.url)),
+      '@layouts': fileURLToPath(new URL('./src/shared/ui/layouts', import.meta.url)),
       '@shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
+      '@widgets': fileURLToPath(new URL('./src/widgets', import.meta.url)),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '@styles/helpers' as *;`
-      }
+        additionalData: `@use '@styles/helpers' as *;`,
+      },
     },
-  }
+  },
 })

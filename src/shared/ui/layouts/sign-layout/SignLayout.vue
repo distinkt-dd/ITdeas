@@ -15,7 +15,7 @@ const route = useRoute()
 const page = computed(() => route.meta.pageType as string)
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .main {
   position: relative;
   @include flex-center();

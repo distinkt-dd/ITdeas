@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix --cache",
+    "lint": "eslint src/ --ext .vue,.ts,.js --fix --cache",
     "format": "prettier --write src/",
     "prepare": "husky",
     "check": "npm run lint && npm run format",
@@ -24,9 +24,13 @@
     }
   },
   "lint-staged": {
-    "*.{css,scss}": "npm run stylelint:fix",
-    "*.{js,jsx,ts,tsx,vue}": "npm run lint",
-    "*.{js,jsx,ts,tsx,json,css,scss,md,vue}": "npm run format"
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix --cache",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "vue": "^3.5.22",

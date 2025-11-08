@@ -7,9 +7,9 @@ declare module '*.vue' {
 }
 
 // Объявления для модулей
-declare module '@layouts/*'
-declare module '@components/*'
+declare module '@shared/ui/layouts/*'
 declare module '@pages/*'
 declare module '@router/*'
-declare module '@styles/*'
+declare module '@/app/styles/*'
 declare module '@shared/*'
+declare module '@widgets/*'

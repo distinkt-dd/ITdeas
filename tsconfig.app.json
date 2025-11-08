@@ -10,7 +10,7 @@
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
       "@router/*": ["./src/app/router/*"],
-      "@styles/*": ["./src/styles/*"],
+      "@styles/*": ["./src/app/styles/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@shared/*": ["./src/shared/*"]
     }
