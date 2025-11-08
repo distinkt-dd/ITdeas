@@ -20,6 +20,7 @@ export default defineConfig({
       '@layouts': fileURLToPath(new URL('./src/shared/ui/layouts', import.meta.url)),
       '@shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
       '@widgets': fileURLToPath(new URL('./src/widgets', import.meta.url)),
+      '@features': fileURLToPath(new URL('./src/features', import.meta.url)),
     },
   },
   css: {

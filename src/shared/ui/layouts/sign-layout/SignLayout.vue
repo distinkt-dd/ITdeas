@@ -44,7 +44,7 @@ const page = computed(() => route.meta.pageType as string)
     border-radius: 50%;
     @include square(1500px);
     filter: blur(150px);
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: -1;
     top: -60%;
     left: -40%;
@@ -58,7 +58,7 @@ const page = computed(() => route.meta.pageType as string)
     border-radius: 50%;
     @include square(1500px);
     filter: blur(150px);
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: -1;
     top: -60%;
     right: -40%;
