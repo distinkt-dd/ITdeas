@@ -5,5 +5,5 @@
 </template>
 
 <style lang="scss">
-@use '@features/forms/ui/form.scss';
+@use '@/widgets/app-form/form.scss';
 </style>

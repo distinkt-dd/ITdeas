@@ -1,0 +1,84 @@
+@use '@styles/helpers' as *;
+
+.form {
+  max-width: 484px;
+  width: 100%;
+  background-color: var(--background-elements);
+  border: var(--border-width-md) solid var(--color-border-main);
+  border-radius: var(--border-radius-lg);
+  padding: fluid(20, 15) fluid(20, 15) fluid(35, 15);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  //  align-items: center;
+  row-gap: 15px;
+
+  &__logo {
+    margin: 0 auto;
+    color: var(--color-accent);
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__field {
+    margin-block-start: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &:has(.form__field-input:not(:placeholder-shown)),
+    &:has(.form__field-input:-webkit-autofill) {
+      .form__field-label {
+        scale: 0.7;
+        translate: -1.75em -3.1em;
+        color: var(--color-text-white);
+      }
+    }
+
+    &-input {
+      padding: 12px 20px;
+      background-color: transparent;
+      border-radius: var(--border-radius-sm);
+      border: solid var(--border-width-sm) var(--color-border-main);
+      color: var(--color-text-white);
+      font-weight: 500;
+      font-size: 12px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-label {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      color: var(--color-placeholder);
+      translate: 0 -50%;
+      cursor: text;
+    }
+  }
+
+  &__button {
+    max-width: 100%;
+    width: 100%;
+    padding-block: 10px;
+  }
+
+  &__block {
+    display: flex;
+  }
+
+  &__link {
+    color: var(--color-placeholder);
+
+    &-unknownpass {
+      text-align: left;
+      &:hover {
+        color: var(--color-text-white);
+      }
+    }
+  }
+}

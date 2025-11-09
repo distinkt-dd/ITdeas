@@ -4,12 +4,14 @@
     <div class="wrapper"></div>
     <router-view></router-view>
   </main>
-  <footer class="visually-hidden"></footer>
+  <footer class="visually-hidden" v-if="page !== 'auth'"></footer>
+  <AuthFooter v-else />
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import AuthFooter from '@/widgets/auth-footer/ui/AuthFooter.vue'
 
 const route = useRoute()
 const page = computed(() => route.meta.pageType as string)

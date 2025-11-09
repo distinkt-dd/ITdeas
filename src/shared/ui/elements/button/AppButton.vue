@@ -1,0 +1,29 @@
+<template>
+  <button class="button">
+    <slot />
+  </button>
+</template>
+
+<style scoped lang="scss">
+.button {
+  border-radius: var(--border-radius-lg);
+  border: none;
+  font-size: 14px;
+  color: var(--color-text-white);
+  font-weight: 600;
+  cursor: pointer;
+
+  background: transparent;
+
+  &-gradient {
+    background-image: radial-gradient(200.23% 350.39% at -64.02% 210.29%, #ffa500 0%, #473cfb 100%);
+    background-size: 100% 100%;
+    background-position: left center;
+    filter: brightness(100%) saturate(100%);
+    transition: filter var(--transition-duration) ease;
+    &:hover {
+      filter: brightness(110%) saturate(170%);
+    }
+  }
+}
+</style>
