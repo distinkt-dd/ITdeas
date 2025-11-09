@@ -92,5 +92,11 @@ const page = computed(() => route.meta.pageType as string)
       transform: translateX(0);
     }
   }
+
+  &-registration,
+  &-auth {
+    display: flex;
+    gap: 30px;
+  }
 }
 </style>

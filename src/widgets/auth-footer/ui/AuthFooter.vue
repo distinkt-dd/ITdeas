@@ -2,7 +2,7 @@
   <footer class="footer footer-auth">
     <div class="footer-auth__block">
       <a href="#" class="footer-auth__link"> Политика конфиденциальности </a>
-      <router-link to="/registration" class="footer-auth__link"> Есть аккаунт? </router-link>
+      <router-link to="/registration" class="footer-auth__link"> Нет аккаунта? </router-link>
     </div>
   </footer>
 </template>

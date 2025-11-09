@@ -25,5 +25,11 @@
       filter: brightness(110%) saturate(170%);
     }
   }
+
+  &[disabled] {
+    filter: brightness(70%);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 </style>

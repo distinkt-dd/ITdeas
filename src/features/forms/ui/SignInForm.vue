@@ -30,11 +30,12 @@
         v-model="form.password"
       />
     </div>
-    <AppButton class="form__button button-gradient"> Войти </AppButton>
+    <AppButton class="form__button button-gradient" :disabled="!form.isValid"> Войти </AppButton>
     <div class="form__block">
-      <a href="#" class="form__link form__link-unknownpass"> Забыли пароль? </a>
+      <a href="#" class="form__link form__link-effect"> Забыли пароль? </a>
     </div>
   </app-form>
+  <AppErrorsBar />
 </template>
 
 <script lang="ts" setup>
@@ -44,6 +45,7 @@ import type { TFormBase } from '@shared/types/forms/form.ts'
 import type { TSignInForm } from '@shared/types/forms/signInForm.ts'
 import { reactive } from 'vue'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
+import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar.vue'
 
 type TSignInFormView = TFormBase & TSignInForm
 
