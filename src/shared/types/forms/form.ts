@@ -1,5 +1,5 @@
 export type TFormBase = {
-  errors: Record<string, string>
+  errors: Record<string, Record<string, string>>
   isValid: boolean
 }
 

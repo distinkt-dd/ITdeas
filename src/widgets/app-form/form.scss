@@ -87,4 +87,14 @@
       color: var(--color-accent);
     }
   }
+
+  &__errors {
+    padding-left: 20px;
+    list-style-type: square;
+    &-li {
+      color: var(--color-red);
+      font-size: 12px;
+      text-align: left;
+    }
+  }
 }

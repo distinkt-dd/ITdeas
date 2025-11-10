@@ -2,49 +2,33 @@
   <app-form class="sign-up-form" @submit="signUp">
     <AppLogo class="form__logo" />
     <h1 class="form__title sign-up-form__title h1">Регистрация в ITdeas</h1>
-    <div class="form__field field">
-      <label for="email-input" class="form__field-label"> Введите email </label>
-      <input
-        id="email-input"
-        name="email"
-        type="email"
-        class="form__field-input"
-        placeholder=" "
-        autocomplete="off"
-        maxlength="30"
-        minlength="6"
-        v-model="form.email"
-      />
-    </div>
-    <div class="form__field field">
-      <label for="login-input" class="form__field-label"> Введите логин </label>
-      <input
-        id="login-input"
-        name="login"
-        type="text"
-        class="form__field-input"
-        placeholder=" "
-        autocomplete="off"
-        maxlength="30"
-        minlength="6"
-        v-model="form.login"
-      />
-    </div>
-    <div class="form__field field">
-      <label for="password-input" class="form__field-label"> Введите пароль </label>
-      <input
-        id="password-input"
-        name="password"
-        type="password"
-        class="form__field-input"
-        placeholder=" "
-        autocomplete="off"
-        maxlength="30"
-        minlength="6"
-        v-model="form.password"
-      />
-    </div>
-    <AppButton class="form__button button-gradient" :disabled="!form.isValid">
+    <FormField
+      id="email-input"
+      label="Введите email"
+      type="email"
+      v-model="form.email"
+      :minlength="4"
+    />
+    <FormField
+      id="login-input"
+      label="Введите логин"
+      type="text"
+      v-model="form.login"
+      :maxlength="30"
+      :minlength="5"
+    />
+    <FormField
+      id="password-input"
+      label="Введите пароль"
+      type="password"
+      v-model="form.password"
+      :maxlength="30"
+      :minlength="6"
+    />
+    <AppButton
+      class="form__button button-gradient"
+      :disabled="form.password === '' || form.login === '' || form.email === ''"
+    >
       Зарегистрироваться
     </AppButton>
     <div class="form__block">
@@ -56,8 +40,15 @@
         <span><a href="#" class="form__link-effect">политику конфиденциальности</a></span>
       </p>
     </div>
+    <ul class="form__errors" v-if="Object.keys(form.errors).length > 0">
+      <li class="form__errors-li" v-for="(fieldErrors, fieldName) in form.errors" :key="fieldName">
+        <span v-for="error in Object.values(fieldErrors)" :key="error">
+          {{ error }}
+        </span>
+      </li>
+    </ul>
   </app-form>
-  <AppErrorsBar />
+  <AppErrorsBar :errors-field="['login', 'password', 'email']" />
 </template>
 
 <script setup lang="ts">
@@ -66,8 +57,10 @@ import AppForm from '@/widgets/app-form/AppForm.vue'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
 import type { TFormBase } from '@shared/types/forms/form.ts'
 import type { TSignUpForm } from '@shared/types/forms/signUpForm.ts'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import AppErrorsBar from '@widgets/app-errorsbar/ui/AppErrorsBar.vue'
+import { useFormValidate } from '@/entities/model/validateForm.ts'
+import FormField from '@shared/ui/elements/field/FormField.vue'
 
 type TSignUpFormView = TFormBase & TSignUpForm
 
@@ -79,8 +72,39 @@ const form = reactive<TSignUpFormView>({
   errors: {},
 })
 
+const formValidateModel = ref(useFormValidate())
+
+const validation = (): void => {
+  formValidateModel.value.setLogin(form.login)
+  formValidateModel.value.setPassword(form.password)
+  formValidateModel.value.setEmail(form.email)
+  formValidateModel.value.validationLogin()
+  formValidateModel.value.validationPassword()
+  formValidateModel.value.validationEmail()
+
+  const errors = formValidateModel.value.getErrors
+  if (Object.keys(errors).length > 0) {
+    form.errors = errors
+    form.isValid = false
+    formValidateModel.value.setValid(form.isValid)
+  } else {
+    form.errors = {}
+    form.isValid = true
+    formValidateModel.value.setValid(form.isValid)
+  }
+}
+
 const signUp = (e: Event) => {
   e.preventDefault()
-  console.dir(form)
+  validation()
+  const isValid = formValidateModel.value.getIsValid
+  if (isValid) {
+    form.password = ''
+    form.login = ''
+    form.email = ''
+    form.errors = {}
+    formValidateModel.value.setValid(!isValid)
+    formValidateModel.value.clearErrors()
+  }
 }
 </script>
