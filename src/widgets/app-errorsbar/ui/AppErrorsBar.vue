@@ -3,7 +3,7 @@
     <h2 class="h3 error-bar__title">Будьте внимательны при заполнении формы:</h2>
     <ul class="error-bar__errors" v-if="dataErrors">
       <li class="error-bar__errors-li" v-for="(fieldError, index) in fields" :key="index">
-        <span v-for="(error, index) in dataErrors[fieldError]" :key="index">
+        <span v-for="(error, index) in getFieldErrors(fieldError)" :key="index">
           {{ error }}
         </span>
       </li>
@@ -13,12 +13,21 @@
 
 <script lang="ts" setup>
 import dataErrors from '@shared/data/forms/errors.ts'
+
 interface propsErrors {
   errorsField: string[]
 }
 
 const props = defineProps<propsErrors>()
 const fields = props.errorsField
+
+const getFieldErrors = (fieldError: string): string[] => {
+  if (fieldError in dataErrors) {
+    const errors = dataErrors[fieldError as keyof typeof dataErrors]
+    return Object.values(errors)
+  }
+  return []
+}
 </script>
 
 <style lang="scss" scoped>
