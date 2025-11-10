@@ -22,7 +22,8 @@
       class="form__button button-gradient"
       :disabled="form.password === '' || form.login === ''"
     >
-      Войти
+      <app-spiner v-if="form.isValid" width="20px" height="20px" />
+      <span v-else>Войти</span>
     </AppButton>
     <div class="form__block">
       <a href="#" class="form__link form__link-effect"> Забыли пароль? </a>
@@ -48,6 +49,7 @@ import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar.vue'
 import { useFormValidate } from '@entities/model/validateForm.ts'
 import type { TFormBase } from '@shared/types/forms/form.ts'
 import FormField from '@shared/ui/elements/field/FormField.vue'
+import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner.vue'
 
 type TSignInFormView = TSignInForm & TFormBase
 

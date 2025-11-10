@@ -29,7 +29,8 @@
       class="form__button button-gradient"
       :disabled="form.password === '' || form.login === '' || form.email === ''"
     >
-      Зарегистрироваться
+      <app-spiner v-if="form.isValid" width="20px" height="20px" />
+      <span v-else>Зарегистрироваться</span>
     </AppButton>
     <div class="form__block">
       <router-link to="/auth" class="form__link form__link-effect"> Есть аккаунт? </router-link>
@@ -61,6 +62,7 @@ import { reactive, ref } from 'vue'
 import AppErrorsBar from '@widgets/app-errorsbar/ui/AppErrorsBar.vue'
 import { useFormValidate } from '@/entities/model/validateForm.ts'
 import FormField from '@shared/ui/elements/field/FormField.vue'
+import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner.vue'
 
 type TSignUpFormView = TFormBase & TSignUpForm
 
