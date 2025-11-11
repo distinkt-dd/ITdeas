@@ -1,4 +1,4 @@
-export type TSignUpForm = {
+export type FormData = {
   login: string
   password: string
   email: string
