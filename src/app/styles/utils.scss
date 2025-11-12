@@ -2,8 +2,8 @@
 
 .container-app {
   width: 100%;
-  max-width: calc(var(--container-app-width) + var(--container-padding-x) * 2);
-  padding-inline: var(--container-padding-x);
+  max-width: 100%;
+  padding-right: 10px;
 }
 
 .visually-hidden {

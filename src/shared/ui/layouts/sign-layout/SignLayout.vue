@@ -1,6 +1,10 @@
 <template>
   <header class="visually-hidden"></header>
   <main class="main" :class="`main-${page}`">
+    <div class="background-elements">
+      <div class="bg-element bg-element-1"></div>
+      <div class="bg-element bg-element-2"></div>
+    </div>
     <div class="wrapper"></div>
     <router-view></router-view>
   </main>
@@ -20,12 +24,42 @@ const page = computed(() => route.meta.pageType as string)
 <style lang="scss">
 .main {
   position: relative;
-  @include flex-center();
-  max-width: 100%;
-  width: 100%;
   height: 100vh;
   z-index: 0;
   overflow: hidden;
+
+  .background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bg-element {
+    position: absolute;
+    border-radius: 50%;
+    width: 1500px;
+    height: 1500px;
+    filter: blur(150px);
+    opacity: 0.2;
+    z-index: -1;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-1 {
+      background-color: var(--color-accent);
+      top: -60%;
+      left: -40%;
+    }
+
+    &-2 {
+      background-color: var(--color-default-elipse-fiol);
+      top: -60%;
+      right: -40%;
+    }
+  }
 
   & .wrapper {
     position: absolute;
@@ -39,54 +73,26 @@ const page = computed(() => route.meta.pageType as string)
     z-index: -1;
   }
 
-  &:after {
-    content: '';
-    position: absolute;
-    background-color: var(--color-accent);
-    border-radius: 50%;
-    @include square(1500px);
-    filter: blur(150px);
-    opacity: 0.2;
-    z-index: -1;
-    top: -60%;
-    left: -40%;
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    background-color: var(--color-default-elipse-fiol);
-    border-radius: 50%;
-    @include square(1500px);
-    filter: blur(150px);
-    opacity: 0.2;
-    z-index: -1;
-    top: -60%;
-    right: -40%;
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   &-registration {
-    &:after {
+    .bg-element-1 {
       left: 100%;
       transform: translateX(-60%);
     }
 
-    &:before {
+    .bg-element-2 {
       right: 100%;
       transform: translateX(60%);
     }
   }
 
   &-auth {
-    &:after {
+    .bg-element-1 {
       left: auto;
       right: 60%;
       transform: translateX(0);
     }
 
-    &:before {
+    .bg-element-2 {
       right: auto;
       left: 60%;
       transform: translateX(0);
