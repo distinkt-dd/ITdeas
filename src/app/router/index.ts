@@ -6,6 +6,7 @@ import RegistrationPage from '@pages/RegistrationPage.vue'
 import NotFoundPage from '@pages/NotFoundPage.vue'
 import type { Component } from 'vue'
 import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
+import AppAside from '@/widgets/app-aside/ui/AppAside.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -35,6 +36,7 @@ const routes: RouteRecordRaw[] = [
       title: 'ITdeas | Лента идей',
       components: {
         header: AppHeader,
+        aside: AppAside,
       },
     },
   },
