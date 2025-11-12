@@ -4,11 +4,15 @@ import IdeaFeedPage from '@pages/IdeaFeedPage.vue'
 import AuthPage from '@pages/AuthPage.vue'
 import RegistrationPage from '@pages/RegistrationPage.vue'
 import NotFoundPage from '@pages/NotFoundPage.vue'
+import type { Component } from 'vue'
+import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
     layout: string
     title: string
+    pageType?: string
+    components?: Record<string, Component>
   }
 }
 
@@ -29,6 +33,9 @@ const routes: RouteRecordRaw[] = [
     meta: {
       layout: 'main',
       title: 'ITdeas | Лента идей',
+      components: {
+        header: AppHeader,
+      },
     },
   },
   {

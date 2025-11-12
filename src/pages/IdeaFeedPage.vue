@@ -1,12 +1,7 @@
 <template>
-  <h1>Лента идей</h1>
+  <h1>feed content</h1>
 </template>
 
 <script lang="ts" setup></script>
 
-<style scoped>
-h3 {
-  position: absolute;
-  right: 0;
-}
-</style>
+<style scoped></style>

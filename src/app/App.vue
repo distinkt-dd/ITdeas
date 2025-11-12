@@ -1,5 +1,9 @@
 <template>
-  <component :is="layout"></component>
+  <component :is="layout">
+    <template v-for="(component, slotName) in routeComponents" :key="slotName" #[slotName]>
+      <component :is="component"></component>
+    </template>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -18,5 +22,9 @@ const layouts: Record<string, Component> = {
 const layout = computed(() => {
   const layoutName = route.meta.layout || 'main'
   return layouts[layoutName] || layouts['main']
+})
+
+const routeComponents = computed(() => {
+  return route.meta.components || {}
 })
 </script>

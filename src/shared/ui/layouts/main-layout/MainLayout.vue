@@ -1,5 +1,5 @@
 <template>
-  <header class="visually-hidden"></header>
+  <slot name="header"> </slot>
   <main class="main">
     <router-view></router-view>
   </main>
