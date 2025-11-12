@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import IdeaFeedPage from '@pages/IdeaFeedPage.vue'
 import AuthPage from '@pages/AuthPage.vue'
 import RegistrationPage from '@pages/RegistrationPage.vue'
+import NotFoundPage from '@pages/NotFoundPage.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -12,6 +13,15 @@ declare module 'vue-router' {
 }
 
 const routes: RouteRecordRaw[] = [
+  {
+    path: '/not-found',
+    name: 'Страница не найдена!',
+    component: NotFoundPage,
+    meta: {
+      layout: 'sign',
+      title: 'ITdeas | 404',
+    },
+  },
   {
     path: '/',
     name: 'Лента идей',
@@ -40,6 +50,10 @@ const routes: RouteRecordRaw[] = [
       title: 'ITdeas | Регистрация',
       pageType: 'registration',
     },
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/not-found',
   },
 ]
 
