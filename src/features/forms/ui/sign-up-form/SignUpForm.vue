@@ -74,7 +74,7 @@
 </template>
 
 <script setup lang="ts">
-import AppLogo from '@shared/ui/elements/logo/AppLogo.vue'
+import AppLogo from '@shared/ui/elements/icons/logo/AppLogo.vue'
 import AppForm from '@/widgets/app-form/AppForm.vue'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
 import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar.vue'

@@ -103,6 +103,7 @@ const page = computed(() => route.meta.pageType as string)
   &-auth {
     display: flex;
     gap: 30px;
+    @include flex-center();
   }
 }
 </style>

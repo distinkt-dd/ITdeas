@@ -16,6 +16,8 @@ import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
 
 <style scoped lang="scss">
 .not-found {
+  height: 100%;
+  @include flex-center();
   & span {
     display: block;
     text-align: center;
@@ -26,6 +28,8 @@ import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    max-width: 700px;
+    width: 100%;
   }
 
   &__code {
