@@ -46,3 +46,15 @@
   --transition-duration: 0.2s;
   --transition-duration-longer: 0.4s;
 }
+
+:root.white-theme {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #ffa500;
+  --color-light-highlighter: #ffffff;
+  --color-dark-hightlighter: #1b1a2a;
+  --color-very-dark: #080715;
+  --color-red: #ff3535;
+  --color-gray: #6e6e6e;
+  --color-default-elipse-fiol: #473cfb;
+}

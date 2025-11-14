@@ -29,7 +29,7 @@
 .main {
   position: relative;
   grid-area: main;
-  background-color: green;
+  //  background-color: green;
 
   .background-elements {
     position: absolute;
