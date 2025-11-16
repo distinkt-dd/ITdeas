@@ -21,7 +21,7 @@ const route = useRoute()
 const page = computed(() => route.meta.pageType as string)
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main {
   position: relative;
   height: 100vh;

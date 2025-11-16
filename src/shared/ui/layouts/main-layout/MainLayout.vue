@@ -7,13 +7,19 @@
         <div class="bg-element bg-element-1"></div>
         <div class="bg-element bg-element-2"></div>
       </div>
-      <router-view></router-view>
+      <router-view :body-title="bodyTitle"></router-view>
     </main>
     <footer class="visually-hidden"></footer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const bodyTitle = computed(() => route.meta.bodyTitle as string | undefined)
+</script>
 
 <style lang="scss" scoped>
 .layout-main {
@@ -24,13 +30,15 @@
     'aside header'
     'aside main';
   grid-template-columns: 13% 87%;
+  grid-template-rows: auto 1fr;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .main {
   position: relative;
   grid-area: main;
-  //  background-color: green;
-
+  min-height: 100%;
   .background-elements {
     position: absolute;
     top: 0;
@@ -42,7 +50,7 @@
   }
 
   .bg-element {
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     filter: blur(150px);
     opacity: 0.2;

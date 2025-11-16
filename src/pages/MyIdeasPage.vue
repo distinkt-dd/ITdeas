@@ -1,12 +1,11 @@
 <template>
-  <h1>Мои идеи</h1>
+  <h1>{{ bodyTitle }}</h1>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineProps<{
+  bodyTitle: string | undefined
+}>()
+</script>
 
-<style scoped>
-h3 {
-  position: absolute;
-  right: 0;
-}
-</style>
+<style scoped></style>
