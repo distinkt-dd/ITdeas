@@ -1,7 +1,11 @@
 <template>
-  <h1>feed content</h1>
+  <h1>{{ bodyTitle }}</h1>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineProps<{
+  bodyTitle: string | undefined
+}>()
+</script>
 
 <style scoped></style>
