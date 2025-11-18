@@ -1,4 +1,6 @@
-const dataErrors = {
+type TDataErrors = Record<string, Record<string, string>>
+
+const dataErrors: TDataErrors = {
   login: {
     emptyLogin: 'Поле логина не должно пустовать!',
     notCorrectLogin:
