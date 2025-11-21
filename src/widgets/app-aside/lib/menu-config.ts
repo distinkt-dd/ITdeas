@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { markRaw, reactive } from 'vue'
 import type { Component } from 'vue'
 import FeedIdeasIcon from '@shared/ui/elements/icons/menu-icons/FeedIdeasIcon.vue'
 import MyIdeasIcon from '@shared/ui/elements/icons/menu-icons/MyIdeasIcon.vue'
@@ -39,19 +39,19 @@ export const menuTitles: titlesMenu = {
 const menuConstructor = reactive<MenuConstructor>({
   mainMenu: {
     feedIdeas: {
-      icon: FeedIdeasIcon,
+      icon: markRaw(FeedIdeasIcon),
       title: 'Лента идей',
       route: '/',
     },
 
     myIdeas: {
-      icon: MyIdeasIcon,
+      icon: markRaw(MyIdeasIcon),
       title: 'Мои идеи',
       route: '/myIdeas',
     },
 
     favoriteIdeas: {
-      icon: FavoritesIcon,
+      icon: markRaw(FavoritesIcon),
       title: 'Избранное',
       route: '/favorites',
     },
@@ -59,7 +59,7 @@ const menuConstructor = reactive<MenuConstructor>({
 
   historyMenu: {
     myVisitsIdeas: {
-      icon: MyVisitsIcon,
+      icon: markRaw(MyVisitsIcon),
       title: 'Мои посещения',
       route: '/myVisits',
     },
@@ -67,7 +67,7 @@ const menuConstructor = reactive<MenuConstructor>({
 
   personalMenu: {
     parametersITdeas: {
-      icon: ParametersIcon,
+      icon: markRaw(ParametersIcon),
       title: 'Параметры',
       route: '/appSettings',
     },

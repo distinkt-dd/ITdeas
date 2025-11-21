@@ -7,21 +7,25 @@
         <div class="bg-element bg-element-1"></div>
         <div class="bg-element bg-element-2"></div>
       </div>
-      <router-view :body-title="bodyTitle"></router-view>
+      <div class="container page-content">
+        <router-view></router-view>
+      </div>
     </main>
     <footer class="visually-hidden"></footer>
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-const bodyTitle = computed(() => route.meta.bodyTitle as string | undefined)
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+.page-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 100%;
+  width: 100%;
+  grid-template-rows: 50px auto;
+}
+
 .layout-main {
   display: grid;
   column-gap: 12px;
