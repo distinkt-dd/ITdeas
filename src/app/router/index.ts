@@ -11,6 +11,7 @@ import MyIdeasPage from '@pages/MyIdeasPage.vue'
 import FavoritesPage from '@pages/FavoritesPage.vue'
 import MyVisitsPage from '@pages/MyVisitsPage.vue'
 import SettingsProfilePage from '@pages/SettingsProfilePage.vue'
+import ProfilePage from '@pages/ProfilePage.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -44,6 +45,34 @@ const routes: RouteRecordRaw[] = [
         aside: AppAside,
       },
       bodyTitle: 'Лента идей',
+    },
+  },
+  {
+    path: '/myIdeas',
+    name: 'myIdeasPage',
+    component: MyIdeasPage,
+    meta: {
+      layout: 'main',
+      title: 'ITdeas | Мои идеи',
+      components: {
+        header: AppHeader,
+        aside: AppAside,
+      },
+      bodyTitle: 'Мои идеи',
+    },
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfilePage,
+    meta: {
+      layout: 'main',
+      title: 'ITdeas | Профиль',
+      components: {
+        header: AppHeader,
+        aside: AppAside,
+      },
+      bodyTitle: 'Профиль',
     },
   },
   {

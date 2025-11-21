@@ -21,6 +21,14 @@
         </li>
       </ul>
     </div>
+    <div class="aside__profilebar">
+      <router-link to="/profile">
+        <div class="aside__profilebar-content">
+          <ProfileIcon />
+          <p class="aside__profilebar-name">Демаков Дмитрий</p>
+        </div>
+      </router-link>
+    </div>
   </aside>
 </template>
 
@@ -35,6 +43,23 @@
   grid-template-rows: auto;
   height: 100dvh;
   gap: 10px;
+
+  &__profilebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 10px;
+
+    &-name {
+      font-weight: 700;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
 
   &__title {
     text-align: center;
@@ -59,9 +84,11 @@
       }
 
       &:last-child {
+        max-height: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: space-between;
       }
     }
   }
@@ -96,6 +123,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons.ts'
 import { navigator } from '@shared/utils/navigator.ts'
 import { menuTitles } from '@/widgets/app-aside/lib/menu-config.ts'
+import ProfileIcon from '@/shared/ui/elements/icons/profile-icon/ProfileIcon.vue'
 
 type MenuSection = MenuConstructor[keyof MenuConstructor]
 
