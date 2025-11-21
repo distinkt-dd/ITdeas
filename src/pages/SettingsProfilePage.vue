@@ -1,11 +1,11 @@
 <template>
-  <h1>{{ bodyTitle }}</h1>
+  <h2>{{ pageTitle }}</h2>
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  bodyTitle: string | undefined
-}>()
-</script>
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
+const pageTitle: string | undefined = route.meta?.bodyTitle
+</script>
 <style scoped></style>

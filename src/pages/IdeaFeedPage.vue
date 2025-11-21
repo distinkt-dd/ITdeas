@@ -1,12 +1,9 @@
 <template>
-  <AppContentWidget> </AppContentWidget>
+  <PageContentTitle />
+  <SerchField />
 </template>
 
 <script lang="ts" setup>
-import AppContentWidget from '@/widgets/app-content/AppContentWidget.vue'
-defineProps<{
-  bodyTitle: string | undefined
-}>()
+import SerchField from '@shared/ui/elements/searchField/serchField.vue'
+import PageContentTitle from '@shared/ui/elements/page-content-title/pageContentTitle.vue'
 </script>
-
-<style scoped></style>

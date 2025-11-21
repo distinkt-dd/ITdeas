@@ -123,7 +123,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons.ts'
 import { navigator } from '@shared/utils/navigator.ts'
 import { menuTitles } from '@/widgets/app-aside/lib/menu-config.ts'
-import ProfileIcon from '@/shared/ui/elements/icons/profile-icon/ProfileIcon.vue'
+import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon.vue'
 
 type MenuSection = MenuConstructor[keyof MenuConstructor]
 
