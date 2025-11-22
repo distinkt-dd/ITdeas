@@ -1,6 +1,6 @@
-import { ValidationRules } from '@features/forms/lib/validation-rules.ts'
-import type { ValidationResult } from '@/features/forms/lib/validation-rules.ts'
-import type { FieldType } from '@/features/forms/lib/validation-rules.ts'
+import { ValidationRules } from '@features/forms/lib/validation-rules'
+import type { ValidationResult } from '@/features/forms/lib/validation-rules'
+import type { FieldType } from '@/features/forms/lib/validation-rules'
 
 export class FormValidators {
   static validateLogin(login: string): ValidationResult {

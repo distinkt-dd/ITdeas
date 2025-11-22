@@ -1,4 +1,4 @@
-import type { TCardImage } from '@shared/types/cards/card-image.ts'
+import type { TCardImage } from '@shared/types/cards/card-image'
 
 export type TCard = {
   id: string

@@ -23,7 +23,11 @@
   grid-template-columns: repeat(5, 1fr);
   max-width: 100%;
   width: 100%;
+  max-height: 100%;
+  height: 100%;
   grid-template-rows: 50px auto;
+  row-gap: 21px;
+  padding-bottom: 20px;
 }
 
 .layout-main {

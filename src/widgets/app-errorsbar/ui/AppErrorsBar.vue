@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import dataErrors from '@shared/data/forms/errors.ts'
+import dataErrors from '@shared/data/forms/errors'
 
 interface propsErrors {
   errorsField: string[]

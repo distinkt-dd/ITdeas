@@ -11,7 +11,7 @@
 </template>
 >
 <script setup lang="ts">
-import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
+import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate'
 </script>
 
 <style scoped lang="scss">

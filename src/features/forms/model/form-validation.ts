@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import type { FormData } from '@shared/types/forms/FormData.ts'
-import { FormValidators } from '@/features/forms/lib/validators.ts'
-import type { FieldType } from '@/features/forms/lib/validation-rules.ts'
+import type { FormData } from '@shared/types/forms/FormData'
+import { FormValidators } from '@/features/forms/lib/validators'
+import type { FieldType } from '@/features/forms/lib/validation-rules'
 
 interface FormValidationState {
   errors: Record<string, Record<string, string>>

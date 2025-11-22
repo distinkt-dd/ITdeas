@@ -1,3 +1,3 @@
-export { FormValidators } from './lib/validators.ts'
-export { ValidationRules } from './lib/validation-rules.ts'
-export { useFormValidate } from './model/form-validation.ts'
+export { FormValidators } from './lib/validators'
+export { ValidationRules } from './lib/validation-rules'
+export { useFormValidate } from './model/form-validation'
