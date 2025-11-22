@@ -54,13 +54,13 @@
 </style>
 
 <script setup lang="ts">
-import AppLogo from '@shared/ui/elements/icons/logo/AppLogo.vue'
-import AppButton from '@shared/ui/elements/button/AppButton.vue'
-import PlusAdderPosts from '@shared/ui/elements/icons/plus-adderposts/PlusAdderPosts.vue'
-import FavoriteBtnIcon from '@shared/ui/elements/icons/favorite-btnicon/FavoriteBtnIcon.vue'
+import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
+import AppButton from '@shared/ui/elements/button/AppButton'
+import PlusAdderPosts from '@shared/ui/elements/icons/plus-adderposts/PlusAdderPosts'
+import FavoriteBtnIcon from '@shared/ui/elements/icons/favorite-btnicon/FavoriteBtnIcon'
 import { useRoute, useRouter } from 'vue-router'
-import { navigator } from '@shared/utils/navigator.ts'
-import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons.ts'
+import { navigator } from '@shared/utils/navigator'
+import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
 
 const router = useRouter()
 const route = useRoute()

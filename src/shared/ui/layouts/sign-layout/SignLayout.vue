@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import AuthFooter from '@/widgets/auth-footer/ui/AuthFooter.vue'
+import AuthFooter from '@/widgets/auth-footer/ui/AuthFooter'
 
 const route = useRoute()
 const page = computed(() => route.meta.pageType as string)

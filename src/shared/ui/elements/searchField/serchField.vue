@@ -7,9 +7,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import FormField from '@shared/ui/elements/field/FormField.vue'
-import AppButton from '@shared/ui/elements/button/AppButton.vue'
-import SearchIcon from '@shared/ui/elements/icons/search-icon/SearchIcon.vue'
+import FormField from '@shared/ui/elements/field/FormField'
+import AppButton from '@shared/ui/elements/button/AppButton'
+import SearchIcon from '@shared/ui/elements/icons/search-icon/SearchIcon'
 </script>
 
 <style scoped lang="scss">

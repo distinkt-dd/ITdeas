@@ -74,13 +74,13 @@
 </template>
 
 <script setup lang="ts">
-import AppLogo from '@shared/ui/elements/icons/logo/AppLogo.vue'
-import AppForm from '@/widgets/app-form/AppForm.vue'
-import AppButton from '@shared/ui/elements/button/AppButton.vue'
-import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar.vue'
+import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
+import AppForm from '@/widgets/app-form/AppForm'
+import AppButton from '@shared/ui/elements/button/AppButton'
+import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar'
 import { useFormValidate } from '@features/forms'
-import FormField from '@shared/ui/elements/field/FormField.vue'
-import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner.vue'
+import FormField from '@shared/ui/elements/field/FormField'
+import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner'
 
 const formValidation = useFormValidate()
 
