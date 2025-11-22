@@ -30,3 +30,13 @@ defineEmits<{
   'update:modelValue': [value: string]
 }>()
 </script>
+
+<style scoped lang="scss">
+.form__field {
+  &-input {
+    &:focus {
+      border-color: var(--color-border-accent);
+    }
+  }
+}
+</style>
