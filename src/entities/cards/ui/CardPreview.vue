@@ -36,7 +36,12 @@
             <HearthIcon :class="{ active: isLiked }" @click="toggleLike" />
           </div>
         </div>
-        <div class="card__managment-item card__managment-views views-block">df</div>
+        <div class="card__managment-item card__managment-views views-block">
+          <div class="views-block__content">
+            <ViewsIcon />
+            <p class="views-block__content-text">3000</p>
+          </div>
+        </div>
       </div>
     </AppSubstrate>
   </div>
@@ -141,6 +146,12 @@
       display: flex;
       justify-content: end;
       align-items: end;
+
+      &__content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
     }
   }
 }
@@ -152,6 +163,7 @@ import AppButton from '@shared/ui/elements/button/AppButton.vue'
 import AppSkill from '@shared/ui/elements/skill/AppSkill.vue'
 import HearthIcon from '@shared/ui/elements/icons/hearth-icon/HearthIcon.vue'
 import { ref } from 'vue'
+import ViewsIcon from '@shared/ui/elements/views/ViewsIcon.vue'
 
 const isLiked = ref(false)
 
