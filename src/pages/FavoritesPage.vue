@@ -1,12 +1,9 @@
 <template>
-  <h2>{{ pageTitle }}</h2>
+  <ProjectList />
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-const route = useRoute()
-
-const pageTitle: string | undefined = route.meta?.bodyTitle
+import ProjectList from '@features/project-list/ui/ProjectList.vue'
 </script>
 
 <style scoped></style>
