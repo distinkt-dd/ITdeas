@@ -26,7 +26,7 @@
   max-height: 100%;
   height: 100%;
   grid-template-rows: 50px auto;
-  row-gap: 21px;
+  gap: 21px 15px;
   padding-bottom: 20px;
 }
 
