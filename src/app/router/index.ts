@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
-import IdeaFeedPage from '@pages/IdeaFeedPage.vue'
-import AuthPage from '@pages/AuthPage.vue'
-import RegistrationPage from '@pages/RegistrationPage.vue'
-import NotFoundPage from '@pages/NotFoundPage.vue'
-import type { Component } from 'vue'
-import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
 import AppAside from '@/widgets/app-aside/ui/AppAside.vue'
-import MyIdeasPage from '@pages/MyIdeasPage.vue'
+import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
+import AuthPage from '@pages/AuthPage.vue'
 import FavoritesPage from '@pages/FavoritesPage.vue'
+import IdeaFeedPage from '@pages/IdeaFeedPage.vue'
+import MyIdeasPage from '@pages/MyIdeasPage.vue'
 import MyVisitsPage from '@pages/MyVisitsPage.vue'
-import SettingsProfilePage from '@pages/SettingsProfilePage.vue'
+import NotFoundPage from '@pages/NotFoundPage.vue'
 import ProfilePage from '@pages/ProfilePage.vue'
+import RegistrationPage from '@pages/RegistrationPage.vue'
+import SettingsProfilePage from '@pages/SettingsProfilePage.vue'
+import type { Component } from 'vue'
+import type { RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -20,6 +20,7 @@ declare module 'vue-router' {
     pageType?: string
     components?: Record<string, Component>
     bodyTitle?: string | undefined
+    personalName?: string | undefined
   }
 }
 
@@ -87,6 +88,7 @@ const routes: RouteRecordRaw[] = [
         aside: AppAside,
       },
       bodyTitle: 'Мои идеи',
+      personalName: 'myIdeasPage',
     },
   },
   {
@@ -101,6 +103,7 @@ const routes: RouteRecordRaw[] = [
         aside: AppAside,
       },
       bodyTitle: 'Избранное',
+      personalName: 'favoritesPage',
     },
   },
   {

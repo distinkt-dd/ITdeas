@@ -1,11 +1,18 @@
 <template>
-  <h2>{{ pageTitle }}</h2>
+  <PageContentTitle />
+  <AppSettings />
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-const route = useRoute()
-
-const pageTitle: string | undefined = route.meta?.bodyTitle
+import PageContentTitle from '@/shared/ui/elements/page-content-title/pageContentTitle.vue'
+import AppSettings from '@/widgets/app-settings/AppSettings.vue'
 </script>
-<style scoped></style>
+<style scoped>
+.settings-page__substrate {
+  grid-column: 1/-1;
+  grid-row: 2 / auto;
+  margin-right: 10px;
+  border-radius: var(--border-radius-lg);
+  border: var(--border-width-sm) solid var(--color-border-main);
+}
+</style>

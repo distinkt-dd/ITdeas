@@ -40,4 +40,14 @@ export const filterWidgetConfig = reactive<IFilterWidgetConfig>({
       { id: 1, elName: 'Оплата' },
     ],
   },
+
+  typeProject: {
+    id: 2,
+    name: 'fil-tProject',
+    text: 'По типу проекта',
+    elements: [
+      { id: 0, elName: 'Коммерческий' },
+      { id: 1, elName: 'Учебный' },
+    ],
+  },
 })
