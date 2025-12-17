@@ -27,6 +27,15 @@
     }
   }
 
+  &-accent {
+    border: 2px solid var(--color-accent);
+
+    @include hover {
+      color: var(--color-white);
+      background-color: var(--color-accent);
+    }
+  }
+
   &-gradient {
     background-image: radial-gradient(200.23% 350.39% at -64.02% 210.29%, #ffa500 0%, #473cfb 100%);
     background-size: 100% 100%;

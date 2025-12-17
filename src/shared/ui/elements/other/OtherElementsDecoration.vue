@@ -23,4 +23,8 @@ defineProps<{
     border-color: var(--color-accent);
   }
 }
+
+.other-info__tab {
+  transition-duration: var(--transition-duration);
+}
 </style>
