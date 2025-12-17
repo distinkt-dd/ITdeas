@@ -11,5 +11,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 71px;
+  overflow-y: auto;
+  padding-right: 3px;
 }
 </style>

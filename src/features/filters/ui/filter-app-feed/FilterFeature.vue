@@ -26,18 +26,19 @@
       </AppButton>
     </div>
   </OtherElementsDecoration>
+  <AppButton class="filters__button button-gradient"> Поиск </AppButton>
 </template>
 
 <script setup lang="ts">
-import OtherElementsDecoration from '@shared/ui/elements/other/OtherElementsDecoration.vue'
 import { filterWidgetConfig } from '@features/filters/lib/filters-config.ts'
 import AppTabArrow from '@shared/ui/elements/arrows/AppTabArrow.vue'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
+import OtherElementsDecoration from '@shared/ui/elements/other/OtherElementsDecoration.vue'
 import { ref } from 'vue'
 
 const activeFilterIds = ref<number[]>([])
 
-const activatedContent = (filterId: number[]) => {
+const activatedContent = (filterId: number) => {
   const index = activeFilterIds.value.indexOf(filterId)
 
   if (index === -1) {
@@ -63,6 +64,9 @@ const activatedContent = (filterId: number[]) => {
       margin: 0;
     }
   }
+}
+.filters__button {
+  padding-block: 5px;
 }
 
 .filters-content {
@@ -139,7 +143,8 @@ const activatedContent = (filterId: number[]) => {
     padding-top: 0;
   }
   100% {
-    max-height: 500px;
+    max-height: 300px;
+    overflow-y: auto;
     opacity: 1;
     padding-top: 15px;
   }

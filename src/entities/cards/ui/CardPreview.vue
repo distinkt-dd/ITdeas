@@ -31,9 +31,17 @@
         </div>
       </div>
       <div class="card__managment">
-        <div class="card__managment-item card__managment-likes likes-block">
+        <div
+          v-if="route.meta.personalName !== 'myIdeasPage'"
+          class="card__managment-item card__managment-likes likes-block"
+        >
           <div class="likes-block__content">
             <HearthIcon :class="{ active: isLiked }" @click="toggleLike" />
+          </div>
+        </div>
+        <div v-else class="card__managment-item card__managment-more more-block">
+          <div class="more-block__content">
+            <MoreIcon />
           </div>
         </div>
         <div class="card__managment-item card__managment-views views-block">
@@ -142,6 +150,22 @@
       justify-content: end;
     }
 
+    & .more-block {
+      display: flex;
+      justify-content: end;
+      &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include square(30px);
+        cursor: pointer;
+
+        @include hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+
     & .views-block {
       display: flex;
       justify-content: end;
@@ -157,15 +181,23 @@
 }
 </style>
 <script setup lang="ts">
-import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
-import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon.vue'
+import MoreIcon from '@/shared/ui/elements/icons/more-icon/MoreIcon.vue'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
-import AppSkill from '@shared/ui/elements/skill/AppSkill.vue'
 import HearthIcon from '@shared/ui/elements/icons/hearth-icon/HearthIcon.vue'
-import { ref } from 'vue'
+import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon.vue'
+import AppSkill from '@shared/ui/elements/skill/AppSkill.vue'
+import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
 import ViewsIcon from '@shared/ui/elements/views/ViewsIcon.vue'
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const isLiked = ref(false)
+
+if (route.meta.personalName && route.meta.personalName === 'favoritesPage') {
+  isLiked.value = true
+}
 
 const toggleLike = () => {
   isLiked.value = !isLiked.value

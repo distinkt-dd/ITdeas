@@ -29,18 +29,6 @@ import CardPreview from '@entities/cards/ui/CardPreview.vue'
   overflow-x: hidden;
   padding-right: 5px;
 
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--background-elements);
-  }
-
   & > * {
     flex-shrink: 0;
   }

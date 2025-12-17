@@ -116,14 +116,16 @@
 </style>
 
 <script setup lang="ts">
-import menuConstructor, { type MenuConstructor } from '@/widgets/app-aside/lib/menu-config'
-import { computed } from 'vue'
+import menuConstructor, {
+  menuTitles,
+  type MenuConstructor,
+} from '@/widgets/app-aside/lib/menu-config'
 import AppButton from '@shared/ui/elements/button/AppButton'
-import { useRoute, useRouter } from 'vue-router'
+import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
 import { navigator } from '@shared/utils/navigator'
-import { menuTitles } from '@/widgets/app-aside/lib/menu-config'
-import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon'
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 type MenuSection = MenuConstructor[keyof MenuConstructor]
 
