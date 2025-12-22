@@ -47,6 +47,35 @@
   --transition-duration-longer: 0.4s;
 }
 
+:root.dark-theme {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #ffa500;
+  --color-light-highlighter: #302e53;
+  --color-dark-hightlighter: #1b1a2a;
+  --color-very-dark: #080715;
+  --color-red: #ff3535;
+  --color-gray: #6e6e6e;
+  --color-default-elipse-fiol: #473cfb;
+
+  --color-font-main: var(--color-white);
+  --color-font-span: var(--color-accent);
+  --color-border-accent: var(--color-accent);
+  --color-border-main: var(--color-light-highlighter);
+  --color-heart-active: var(--color-red);
+  --color-heart-notactive: var(--color-white);
+  --color-placeholder: var(--color-gray);
+  --color-outline: var(--color-white);
+  --color-title-main: var(--color-white);
+  --color-text-white: var(--color-white);
+
+  --background-body: var(--color-very-dark);
+  --background-elements: var(--color-dark-hightlighter);
+  --background-button-active: var(--color-accent);
+  --background-wrapper: var(--color-black);
+  --background-white: var(--color-white);
+}
+
 :root.light-theme {
   --color-background-light: #f9f9f9;
   --color-light-neutral: #e8e8f0;
