@@ -9,7 +9,7 @@
   border-radius: var(--border-radius-lg);
   border: none;
   font-size: 14px;
-  color: var(--color-text-white);
+  color: var(--color-text-main);
   font-weight: 600;
   cursor: pointer;
 

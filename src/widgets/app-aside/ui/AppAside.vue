@@ -100,7 +100,7 @@
     max-width: 100%;
     width: 100%;
     padding: 7px 7px 7px 10px;
-    color: var(--color-text-white);
+    color: var(--color-text-main);
     text-align: left;
     border: solid var(--border-width-sm) var(--color-accent);
 

@@ -7,12 +7,25 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-import { computed, type Component } from 'vue'
+import { useSettingsStore } from '@/widgets/app-settings/model/settings-store'
+
 import MainLayout from '@shared/ui/layouts/main-layout/MainLayout'
 import SignLayout from '@shared/ui/layouts/sign-layout/SignLayout'
+import { computed, onMounted, type Component } from 'vue'
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
+const store = useSettingsStore()
+
+onMounted(() => {
+  store.setDefaultOnMounted()
+  const savedTheme = localStorage.getItem('theme') as string
+
+  if (savedTheme) {
+    store.setCurrentTheme(savedTheme)
+    document.documentElement.classList.add(store.getTheme)
+  }
+})
 
 const layouts: Record<string, Component> = {
   main: MainLayout,

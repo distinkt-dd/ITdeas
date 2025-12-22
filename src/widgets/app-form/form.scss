@@ -33,7 +33,7 @@
       .form__field-label {
         scale: 0.7;
         translate: -1.75em -3.1em;
-        color: var(--color-text-white);
+        color: var(--color-text-main);
       }
     }
 
@@ -42,7 +42,7 @@
       background-color: transparent;
       border-radius: var(--border-radius-sm);
       border: solid var(--border-width-sm) var(--color-border-main);
-      color: var(--color-text-white);
+      color: var(--color-text-main);
       font-weight: 500;
       font-size: 12px;
       &:focus {
@@ -74,7 +74,7 @@
     color: var(--color-placeholder);
     &-effect {
       &:hover {
-        color: var(--color-text-white);
+        color: var(--color-text-main);
       }
     }
   }
