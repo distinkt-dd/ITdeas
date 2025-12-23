@@ -51,15 +51,21 @@
 </template>
 
 <script lang="ts" setup>
-import AppForm from '@widgets/app-form/AppForm'
-import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
-import AppButton from '@shared/ui/elements/button/AppButton'
-import AppErrorsBar from '@widgets/app-errorsbar/ui/AppErrorsBar'
 import { useFormValidate } from '@/features/forms'
+import AppButton from '@shared/ui/elements/button/AppButton'
 import FormField from '@shared/ui/elements/field/FormField'
+import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
 import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner'
+import AppErrorsBar from '@widgets/app-errorsbar/ui/AppErrorsBar'
+import AppForm from '@widgets/app-form/AppForm'
+import { onMounted } from 'vue'
 
 const formValidation = useFormValidate()
+
+onMounted(() => {
+  formValidation.clearAllErrors()
+  formValidation.validateForm('signIn')
+})
 
 const signIn = (e: Event) => {
   e.preventDefault()

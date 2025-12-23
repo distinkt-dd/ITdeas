@@ -1,12 +1,16 @@
 <template>
-  <h2>{{ pageTitle }}</h2>
+  <PageContentTitle />
+  <ProjectList />
+  <OtherAside>
+    <OtherInfoWidget />
+  </OtherAside>
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-const route = useRoute()
-
-const pageTitle: string | undefined = route.meta?.bodyTitle
+import ProjectList from '@/features/project-list/ui/ProjectList.vue'
+import PageContentTitle from '@/shared/ui/elements/page-content-title/pageContentTitle.vue'
+import OtherInfoWidget from '@/widgets/app-otherinfo/OtherInfoWidget.vue'
+import OtherAside from '@/widgets/other-aside/OtherAside.vue'
 </script>
 
 <style scoped></style>
