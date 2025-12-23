@@ -74,15 +74,20 @@
 </template>
 
 <script setup lang="ts">
-import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
-import AppForm from '@/widgets/app-form/AppForm'
-import AppButton from '@shared/ui/elements/button/AppButton'
-import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar'
+import AppErrorsBar from '@/widgets/app-errorsbar/ui/AppErrorsBar.vue'
+import AppForm from '@/widgets/app-form/AppForm.vue'
 import { useFormValidate } from '@features/forms'
+import AppButton from '@shared/ui/elements/button/AppButton'
 import FormField from '@shared/ui/elements/field/FormField'
+import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
 import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner'
-
+import { onMounted } from 'vue'
 const formValidation = useFormValidate()
+
+onMounted(() => {
+  formValidation.clearAllErrors()
+  formValidation.validateForm('signUp')
+})
 
 const signUp = (e: Event) => {
   e.preventDefault()

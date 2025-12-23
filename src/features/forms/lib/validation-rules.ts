@@ -32,6 +32,41 @@ export const ValidationRules = {
       format: 'Поле почты введено не корректно',
     },
   },
+
+  name: {
+    regex: /^[A-Za-zА-Яа-яёЁ]+$/,
+    minLength: 2,
+    maxLength: 50,
+    messages: {
+      empty: 'Поле для имени пустое!',
+      format: 'Поле имени должно содержать только буквы!',
+      minLength: 'Имя должно содержать минимум 2 символа',
+      maxLength: 'Имя не может быть более 50 символов',
+    },
+  },
+
+  lastName: {
+    regex: /^[A-Za-zА-Яа-яёЁ]+$/,
+    minLength: 2,
+    maxLength: 50,
+    messages: {
+      empty: 'Поле для фамилии пустое!',
+      format: 'Поле фамилии должно содержать только буквы!',
+      minLength: 'Фамилия должно содержать минимум 2 символа!',
+      maxLength: 'Фамилия не может быть более 50 символов!',
+    },
+  },
+
+  middleName: {
+    regex: /^[A-Za-zА-Яа-яёЁ]+$/,
+    minLength: 2,
+    maxLength: 50,
+    messages: {
+      format: 'Поле отчества должно содержать только буквы!',
+      maxLength: 'Отчество не может быть более 50 символов!',
+      minLength: 'Отчество не может быть меньше 2 символов!',
+    },
+  },
 } as const
 
 export type FieldType = keyof typeof ValidationRules

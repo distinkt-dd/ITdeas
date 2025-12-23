@@ -3,5 +3,5 @@
 </template>
 
 <script lang="ts" setup>
-import signInForm from '@/features/forms/ui/sign-in-form/SignInForm'
+import signInForm from '@/features/forms/ui/sign-in-form/SignInForm.vue'
 </script>
