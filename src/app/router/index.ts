@@ -1,3 +1,4 @@
+import AddingIdeasPage from '@/pages/AddingIdeasPage.vue'
 import AppAside from '@/widgets/app-aside/ui/AppAside.vue'
 import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
 import AuthPage from '@pages/AuthPage.vue'
@@ -152,6 +153,20 @@ const routes: RouteRecordRaw[] = [
       layout: 'sign',
       title: 'ITdeas | Регистрация',
       pageType: 'registration',
+    },
+  },
+  {
+    path: '/createIdea',
+    name: 'Create Idea',
+    component: AddingIdeasPage,
+    meta: {
+      layout: 'main',
+      title: 'ITdeas | Создание идеи',
+      components: {
+        header: AppHeader,
+        aside: AppAside,
+      },
+      bodyTitle: 'Создание проекта',
     },
   },
   {

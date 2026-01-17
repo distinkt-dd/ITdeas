@@ -12,6 +12,8 @@
   color: var(--color-text-main);
   font-weight: 600;
   cursor: pointer;
+  padding: fluid(10, 5);
+  max-width: 300px;
 
   background: transparent;
 
