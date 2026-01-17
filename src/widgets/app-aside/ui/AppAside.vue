@@ -5,6 +5,14 @@
       aside__visible: isOpen,
     }"
   >
+    <div class="aside__content-child aside__content-child-from-header">
+      <AppButton class="button-square-44" @click="navigator(router, '/createIdea')">
+        <PlusAdderPosts :class="{ 'active-route': linkActiveForButtons(route, '/createIdea') }" />
+      </AppButton>
+      <AppButton class="button-square-44" @click="navigator(router, '/favorites')">
+        <FavoriteBtnIcon :class="{ 'active-route': linkActiveForButtons(route, '/favorites') }" />
+      </AppButton>
+    </div>
     <div class="aside__content-child" v-for="[menuKey, menu] in menuEntries" :key="menuKey">
       <h2 class="aside__title h3" v-if="menuTitles[`${menuKey}Title`]">
         {{ menuTitles[`${menuKey}Title`] }}
@@ -104,6 +112,15 @@
         flex-direction: column;
         justify-content: space-between;
       }
+
+      &-from-header {
+        @include tablet-above {
+          display: none;
+        }
+        flex-direction: row;
+        justify-content: center;
+        gap: fluid(20, 15);
+      }
     }
   }
 
@@ -142,6 +159,8 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useBurgerStore } from '@/shared/ui/elements/button/lib/burger-stories'
 import { storeToRefs } from 'pinia'
+import PlusAdderPosts from '@/shared/ui/elements/icons/plus-adderposts/PlusAdderPosts.vue'
+import FavoriteBtnIcon from '@/shared/ui/elements/icons/favorite-btnicon/FavoriteBtnIcon.vue'
 
 const burgerStore = useBurgerStore()
 
