@@ -19,6 +19,12 @@
 
 <style lang="scss" scoped>
 .page-content {
+  &:has(.page-addingposts) {
+    @include tablet {
+      overflow: scroll;
+    }
+  }
+
   display: grid;
 
   max-width: 100%;
