@@ -6,3 +6,5 @@ export type FormData = {
   lastName: string
   middleName: string
 }
+
+export type TFormDataProfile = Pick<FormData, 'name' | 'lastName'>

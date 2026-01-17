@@ -152,11 +152,7 @@ export const useFormValidate = defineStore('formValidation', {
         'middleName',
       ]
       const hasErrors = requiredFields.some((field) => this.errors[field])
-      console.dir(hasErrors)
-      const allFieldsFilled = requiredFields.every(
-        (field) => this.formData[field]?.trim().length > 0,
-      )
-      console.dir(allFieldsFilled)
+
       this.isValid = !hasErrors
     },
 

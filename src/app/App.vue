@@ -11,11 +11,21 @@ import { useSettingsStore } from '@/widgets/app-settings/model/settings-store'
 
 import MainLayout from '@shared/ui/layouts/main-layout/MainLayout'
 import SignLayout from '@shared/ui/layouts/sign-layout/SignLayout'
+import { getOrInitLocalStorageItem } from '@/shared/utils/localStorageActions'
+import { type FormData } from '@/shared/types/forms/FormData'
 import { computed, onMounted, type Component } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const store = useSettingsStore()
+const defaultFormData: FormData = {
+  login: '',
+  email: '',
+  password: '',
+  name: '',
+  lastName: '',
+  middleName: '',
+}
 
 onMounted(() => {
   store.setDefaultOnMounted()
@@ -25,6 +35,8 @@ onMounted(() => {
     store.setCurrentTheme(savedTheme)
     document.documentElement.classList.add(store.getTheme)
   }
+
+  getOrInitLocalStorageItem<FormData>('formDataPayloads', defaultFormData)
 })
 
 const layouts: Record<string, Component> = {
