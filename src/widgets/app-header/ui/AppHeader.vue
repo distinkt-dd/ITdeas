@@ -14,10 +14,26 @@
         <FavoriteBtnIcon :class="{ 'active-route': linkActiveForButtons(route, '/favorites') }" />
       </AppButton>
     </div>
-    <AppButton class="button header__burger button-square-44" @click="switchIsOpen">
+    <AppButton class="button header__burger button-square-44" @click="switchIsOpen" v-if="!isOpen">
       <span></span>
       <span></span>
       <span></span>
+    </AppButton>
+    <AppButton class="button header__burger button-square-44" @click="switchIsOpen" v-else>
+      <svg
+        width="44px"
+        height="44px"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20 20L4 4.00003M20 4L4.00002 20"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </AppButton>
   </header>
 </template>
@@ -91,8 +107,11 @@ import { useRoute, useRouter } from 'vue-router'
 import { navigator } from '@shared/utils/navigator'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
 import { useBurgerStore } from '@/shared/ui/elements/button/lib/burger-stories'
+import { storeToRefs } from 'pinia'
 
 const burgerStore = useBurgerStore()
+
+const { isOpen } = storeToRefs(burgerStore)
 
 const switchIsOpen = () => {
   burgerStore.setIsOpen()
