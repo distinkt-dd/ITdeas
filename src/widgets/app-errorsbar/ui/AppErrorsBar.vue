@@ -24,7 +24,9 @@ const fields = props.errorsField
 const getFieldErrors = (fieldError: string): string[] => {
   if (fieldError in dataErrors) {
     const errors = dataErrors[fieldError as keyof typeof dataErrors]
-    return Object.values(errors)
+    if (errors && typeof errors === 'object') {
+      return Object.values(errors)
+    }
   }
   return []
 }

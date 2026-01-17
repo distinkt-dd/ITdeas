@@ -1,5 +1,10 @@
 <template>
-  <aside class="aside">
+  <aside
+    class="aside"
+    :class="{
+      aside__visible: isOpen,
+    }"
+  >
     <div class="aside__content-child" v-for="[menuKey, menu] in menuEntries" :key="menuKey">
       <h2 class="aside__title h3" v-if="menuTitles[`${menuKey}Title`]">
         {{ menuTitles[`${menuKey}Title`] }}
@@ -22,12 +27,10 @@
       </ul>
     </div>
     <div class="aside__profilebar">
-      <router-link to="/profile">
-        <div class="aside__profilebar-content">
-          <ProfileIcon />
-          <p class="aside__profilebar-name">Демаков Дмитрий</p>
-        </div>
-      </router-link>
+      <div class="aside__profilebar-content" @click="navigator(router, '/profile')">
+        <ProfileIcon />
+        <p class="aside__profilebar-name">Демаков Дмитрий</p>
+      </div>
     </div>
   </aside>
 </template>
@@ -37,12 +40,23 @@
   --border-list: var(--border-width-sm) solid var(--color-border-main);
   grid-area: aside;
   max-width: 250px;
+  width: 100%;
   background-color: var(--background-elements);
   border-right: var(--border-list);
   display: grid;
   grid-template-rows: auto;
   height: 100dvh;
   gap: 10px;
+
+  &__visible {
+    display: grid !important;
+  }
+
+  @include tablet {
+    position: absolute;
+    z-index: 10000;
+    display: none;
+  }
 
   &__profilebar {
     display: flex;
@@ -126,6 +140,12 @@ import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
 import { navigator } from '@shared/utils/navigator'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useBurgerStore } from '@/shared/ui/elements/button/lib/burger-stories'
+import { storeToRefs } from 'pinia'
+
+const burgerStore = useBurgerStore()
+
+const { isOpen } = storeToRefs(burgerStore)
 
 type MenuSection = MenuConstructor[keyof MenuConstructor]
 

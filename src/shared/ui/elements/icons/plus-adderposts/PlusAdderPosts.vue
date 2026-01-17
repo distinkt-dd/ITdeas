@@ -8,3 +8,15 @@
     />
   </svg>
 </template>
+
+<style scoped lang="scss">
+.active {
+  & .circle {
+    color: var(--color-red);
+  }
+
+  &-route {
+    color: var(--color-accent);
+  }
+}
+</style>

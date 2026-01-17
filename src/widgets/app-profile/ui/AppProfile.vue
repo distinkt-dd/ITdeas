@@ -1,12 +1,14 @@
 <template>
   <AppSubstrate class="page-profile">
-    <FioForm />
+    <component :is="currentComponent" />
   </AppSubstrate>
 </template>
 
 <script lang="ts" setup>
-import FioForm from '@/features/forms/ui/fio-form/FioForm.vue'
 import AppSubstrate from '@/shared/ui/elements/substrate/AppSubstrate.vue'
+import { getComponentByStep } from '../lib/utilsFunctions'
+import { computed } from 'vue'
+const currentComponent = computed(() => getComponentByStep())
 </script>
 
 <style lang="scss" scoped>

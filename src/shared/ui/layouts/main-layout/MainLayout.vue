@@ -19,8 +19,14 @@
 
 <style lang="scss" scoped>
 .page-content {
+  &:has(.page-addingposts) {
+    @include tablet {
+      overflow: scroll;
+    }
+  }
+
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+
   max-width: 100%;
   width: 100%;
   max-height: 100%;
@@ -28,6 +34,9 @@
   grid-template-rows: 50px auto;
   gap: 21px 15px;
   padding-bottom: 20px;
+  @include tablet {
+    padding: 10px;
+  }
 }
 
 .layout-main {
@@ -37,10 +46,17 @@
   grid-template-areas:
     'aside header'
     'aside main';
-  grid-template-columns: 13% 87%;
+  grid-template-columns: 13% auto;
   grid-template-rows: auto 1fr;
   height: 100dvh;
   overflow: hidden;
+
+  @include tablet {
+    grid-template-areas:
+      'header'
+      'main';
+    grid-template-columns: 1fr;
+  }
 }
 
 .main {

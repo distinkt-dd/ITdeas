@@ -1,11 +1,12 @@
 <template>
   <div class="form__field field">
-    <label :for="id" class="form__field-label">{{ label }}</label>
-    <input
+    <label :for="id" class="form__field-labelArea">{{ label }}</label>
+    <textarea
+      rows="10"
       :id="id"
       :name="id"
       :type="type"
-      class="form__field-input"
+      class="form__field-input form__field-areainput"
       placeholder=" "
       autocomplete="off"
       :maxlength="maxlength"
@@ -37,6 +38,10 @@ defineEmits<{
     &:focus {
       border-color: var(--color-border-accent);
     }
+  }
+
+  &-areainput {
+    resize: none;
   }
 }
 </style>

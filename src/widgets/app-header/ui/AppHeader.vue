@@ -7,13 +7,18 @@
       </router-link>
     </div>
     <div class="header__management-block">
-      <AppButton class="button-square-44">
-        <PlusAdderPosts />
+      <AppButton class="button-square-44" @click="navigator(router, '/createIdea')">
+        <PlusAdderPosts :class="{ 'active-route': linkActiveForButtons(route, '/createIdea') }" />
       </AppButton>
       <AppButton class="button-square-44" @click="navigator(router, '/favorites')">
         <FavoriteBtnIcon :class="{ 'active-route': linkActiveForButtons(route, '/favorites') }" />
       </AppButton>
     </div>
+    <AppButton class="button header__burger button-square-44" @click="switchIsOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </AppButton>
   </header>
 </template>
 
@@ -21,6 +26,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   grid-area: header;
   border-bottom: solid var(--border-width-sm) var(--color-border-main);
@@ -29,11 +35,34 @@
   width: 100%;
   height: max-content;
 
+  &__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & span {
+      display: block;
+      width: 100%;
+      background-color: var(--color-accent);
+      height: 3px;
+    }
+
+    @include tablet-above {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 10px;
+  }
+
   &__management {
     &-block {
       display: flex;
       align-items: center;
       gap: 20px;
+      @include tablet {
+        display: none;
+      }
     }
   }
 
@@ -61,6 +90,13 @@ import FavoriteBtnIcon from '@shared/ui/elements/icons/favorite-btnicon/Favorite
 import { useRoute, useRouter } from 'vue-router'
 import { navigator } from '@shared/utils/navigator'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
+import { useBurgerStore } from '@/shared/ui/elements/button/lib/burger-stories'
+
+const burgerStore = useBurgerStore()
+
+const switchIsOpen = () => {
+  burgerStore.setIsOpen()
+}
 
 const router = useRouter()
 const route = useRoute()

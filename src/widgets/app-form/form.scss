@@ -13,6 +13,30 @@
   flex-direction: column;
   row-gap: 15px;
 
+  &__select {
+    max-width: 300px;
+    width: 100%;
+
+    & select {
+      cursor: pointer;
+      color: var(--color-text-main);
+      max-width: 100%;
+      width: 100%;
+      background-color: transparent;
+      border: var(--color-accent) solid 2px;
+      padding: fluid(8, 5) fluid(20, 10);
+      border-radius: 10px;
+      &:focus {
+        outline: none;
+      }
+
+      & option {
+        cursor: pointer;
+        background-color: var(--color-border-main);
+      }
+    }
+  }
+
   &__logo {
     margin: 0 auto;
     color: var(--color-accent);
@@ -33,6 +57,12 @@
       .form__field-label {
         scale: 0.7;
         translate: -1.75em -3.1em;
+        color: var(--color-text-main);
+      }
+
+      .form__field-labelArea {
+        scale: 0.7;
+        translate: -1.75em -2.4em;
         color: var(--color-text-main);
       }
     }
@@ -56,6 +86,15 @@
       left: 20px;
       color: var(--color-placeholder);
       translate: 0 -50%;
+      cursor: text;
+    }
+
+    &-labelArea {
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      color: var(--color-placeholder);
+
       cursor: text;
     }
   }

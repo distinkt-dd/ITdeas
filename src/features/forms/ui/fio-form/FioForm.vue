@@ -1,5 +1,5 @@
 <template>
-  <AppForm class="form__fio">
+  <AppForm class="form__fio" @submit.prevent="handleSubmitFormFio">
     <h2 class="form__title form__fio-title h2">Приветствуем тебя, дорогой пользователь!</h2>
     <p class="form__fio-subtitle">Давайте мы вам поможем настроить ваш профиль!</p>
     <FormField
@@ -64,6 +64,8 @@ import FormField from '@/shared/ui/elements/field/FormField.vue'
 import AppForm from '@/widgets/app-form/AppForm.vue'
 import { onMounted } from 'vue'
 const formValidation = useFormValidate()
+
+const handleSubmitFormFio = () => {}
 
 onMounted(() => {
   formValidation.clearAllErrors()
