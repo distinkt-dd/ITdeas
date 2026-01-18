@@ -27,6 +27,11 @@ const page = computed(() => route.meta.pageType as string)
   height: 100vh;
   z-index: 0;
   overflow: hidden;
+  padding-block: fluid(100, 50);
+
+  @include mobile {
+    overflow-y: scroll;
+  }
 
   .background-elements {
     position: absolute;
@@ -68,12 +73,30 @@ const page = computed(() => route.meta.pageType as string)
     content: '';
     background: var(--background-white);
     opacity: 0.03;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     z-index: -1;
+    padding-block: fluid(30, 15);
+  }
+
+  &-registration,
+  &-auth {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      padding-inline: 15px;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &-registration {
+    @include mobile {
+      justify-content: unset;
+    }
     .bg-element-1 {
       left: 100%;
       transform: translateX(-60%);
@@ -97,13 +120,6 @@ const page = computed(() => route.meta.pageType as string)
       left: 60%;
       transform: translateX(0);
     }
-  }
-
-  &-registration,
-  &-auth {
-    display: flex;
-    gap: 30px;
-    @include flex-center();
   }
 }
 </style>

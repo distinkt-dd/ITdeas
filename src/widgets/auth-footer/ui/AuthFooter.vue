@@ -14,6 +14,9 @@
   max-width: 100%;
   width: 100%;
 
+  @include mobile {
+  }
+
   &-auth {
     padding: 27px 0px;
     background-color: var(--background-elements);

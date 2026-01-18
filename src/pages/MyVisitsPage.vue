@@ -1,6 +1,6 @@
 <template>
   <PageContentTitle />
-  <ProjectList />
+  <ProjectList class="myvisit__content" />
   <OtherAside>
     <OtherInfoWidget />
   </OtherAside>

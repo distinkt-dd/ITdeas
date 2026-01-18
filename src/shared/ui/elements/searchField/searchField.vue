@@ -20,6 +20,10 @@ import SearchIcon from '@shared/ui/elements/icons/search-icon/SearchIcon'
     display: flex;
     align-items: center;
     gap: 20px;
+    @include tablet {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
   }
 
   &__button {

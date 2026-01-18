@@ -69,14 +69,19 @@
     border-width: var(--border-width-sm);
     height: 100%;
     gap: 10px;
+    @include mobile {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      column-gap: 0px;
+    }
   }
 
   &__user {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-block: 20px;
-    gap: 30px;
+    padding-block: fluid(20, 10);
+    gap: fluid(30, 15);
     &-profileicon {
       max-width: 100px;
       width: 100px;
@@ -98,6 +103,10 @@
     max-width: 100%;
     width: 100%;
     border-inline: var(--border-card);
+    @include mobile {
+      grid-row: 2/3;
+      border-inline: none;
+    }
   }
 
   &__header {
@@ -140,6 +149,12 @@
     display: flex;
     flex-direction: column;
     padding: 10px 10px 10px 0;
+
+    @include mobile {
+      grid-row: 1/3;
+      border-left: var(--border-card);
+      padding: 10px 10px 10px 10px;
+    }
 
     &-item {
       flex: 1 1 0;

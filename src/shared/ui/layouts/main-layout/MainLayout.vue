@@ -22,6 +22,20 @@
   &:has(.page-addingposts) {
     @include tablet {
       overflow: scroll;
+      grid-template-rows: fluid(50, 5) auto;
+    }
+  }
+
+  &:has(.settings-page__content),
+  &:has(.page-profile) {
+    @include tablet {
+      grid-template-rows: fluid(50, 5) auto;
+    }
+  }
+
+  &:has(.myvisit__content) {
+    @include tablet {
+      gap: 0;
     }
   }
 
@@ -31,18 +45,20 @@
   width: 100%;
   max-height: 100%;
   height: 100%;
-  grid-template-rows: 50px auto;
+  grid-template-rows: fluid(50, 5) auto;
   gap: 21px 15px;
   padding-bottom: 20px;
   @include tablet {
     padding: 10px;
+    column-gap: 0px;
+    grid-template-rows: 44px fluid(50, 35) auto;
   }
 }
 
 .layout-main {
   display: grid;
   column-gap: 12px;
-  row-gap: 20px;
+  row-gap: fluid(20, 10);
   grid-template-areas:
     'aside header'
     'aside main';
