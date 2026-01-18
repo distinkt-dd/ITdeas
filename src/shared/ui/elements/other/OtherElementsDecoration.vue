@@ -1,5 +1,5 @@
 <template>
-  <Component :is="isTab ? OtherTabElement : OtherLinkWrapper">
+  <Component :is="isTab ? OtherTabElement : OtherLinkWrapper" class="linkandtab__element">
     <slot />
   </Component>
 </template>

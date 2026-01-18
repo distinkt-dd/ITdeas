@@ -8,5 +8,9 @@ export const useFilterStore = defineStore('filterData', {
     setIsOpen() {
       this.isOpen = !this.isOpen
     },
+
+    clearAll() {
+      this.isOpen = false
+    },
   },
 })
