@@ -29,6 +29,7 @@
   &:has(.settings-page__content),
   &:has(.page-profile) {
     @include tablet {
+      overflow: scroll;
       grid-template-rows: fluid(50, 5) auto;
     }
   }
