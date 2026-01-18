@@ -13,5 +13,9 @@
   row-gap: 71px;
   overflow-y: auto;
   padding-right: 3px;
+
+  @include tablet {
+    display: none;
+  }
 }
 </style>

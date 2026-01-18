@@ -1,15 +1,8 @@
 <template>
-  <AppSubstrate class="page-profile">
-    <component :is="currentComponent" />
-  </AppSubstrate>
+  <AppSubstrate class="page-profile"> kl; </AppSubstrate>
 </template>
 
-<script lang="ts" setup>
-import AppSubstrate from '@/shared/ui/elements/substrate/AppSubstrate.vue'
-import { getComponentByStep } from '../lib/utilsFunctions'
-import { computed } from 'vue'
-const currentComponent = computed(() => getComponentByStep())
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
 .page-profile {

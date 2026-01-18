@@ -113,12 +113,12 @@ const routes: RouteRecordRaw[] = [
     component: MyVisitsPage,
     meta: {
       layout: 'main',
-      title: 'ITdeas | Мои посещения',
+      title: 'ITdeas | Последние посещения',
       components: {
         header: AppHeader,
         aside: AppAside,
       },
-      bodyTitle: 'Мои посещения',
+      bodyTitle: 'Последние посещения',
     },
   },
   {

@@ -29,6 +29,10 @@ import CardPreview from '@entities/cards/ui/CardPreview.vue'
   overflow-x: hidden;
   padding-right: 5px;
 
+  @include tablet {
+    grid-row: 3 / auto;
+  }
+
   & > * {
     flex-shrink: 0;
   }
