@@ -81,8 +81,11 @@ import AppButton from '@shared/ui/elements/button/AppButton'
 import FormField from '@shared/ui/elements/field/FormField'
 import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
 import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner'
-import { onMounted } from 'vue'
+import { navigator } from '@/shared/utils/navigator'
+import { useRouter } from 'vue-router'
+import { onMounted, onUnmounted } from 'vue'
 const formValidation = useFormValidate()
+const router = useRouter()
 
 onMounted(() => {
   formValidation.clearAllErrors()
@@ -95,7 +98,14 @@ const signUp = (e: Event) => {
 
   if (isValid) {
     formValidation.setSubmitting(true)
-    console.log('Форма регистрации валидна, данные:', formValidation.getFormData())
+    setTimeout(() => {
+      navigator(router, '/auth')
+      formValidation.clearAll()
+    }, 2000)
   }
 }
+
+onUnmounted(() => {
+  formValidation.clearAll()
+})
 </script>

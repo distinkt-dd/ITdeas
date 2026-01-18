@@ -58,7 +58,10 @@ import AppLogo from '@shared/ui/elements/icons/logo/AppLogo'
 import AppSpiner from '@shared/ui/elements/spinner/ui/AppSpiner'
 import AppErrorsBar from '@widgets/app-errorsbar/ui/AppErrorsBar'
 import AppForm from '@widgets/app-form/AppForm'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { navigator } from '@/shared/utils/navigator'
+const router = useRouter()
 
 const formValidation = useFormValidate()
 
@@ -73,9 +76,15 @@ const signIn = (e: Event) => {
 
   if (isValid) {
     formValidation.setSubmitting(true)
-    console.log('Форма валидна, данные:', formValidation.getFormData())
+    setTimeout(() => {
+      navigator(router, '/')
+      formValidation.clearAll()
+    }, 2000)
   }
 }
+onUnmounted(() => {
+  formValidation.clearAll()
+})
 </script>
 
 <style lang="scss" scoped></style>
