@@ -1,10 +1,11 @@
 <template>
   <PageContentTitle />
+  <AppFiltersWidget :is-mobile-widget="true" />
   <FilterButton />
   <SearchField />
   <ProjectList />
   <OtherAside>
-    <AppFiltersWidget />
+    <AppFiltersWidget :is-mobile-widget="false" />
     <OtherInfoWidget />
   </OtherAside>
 </template>

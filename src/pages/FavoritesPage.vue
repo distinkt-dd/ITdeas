@@ -1,14 +1,17 @@
 <template>
   <PageContentTitle />
+  <AppFiltersWidget :is-mobile-widget="true" />
+  <FilterButton />
   <SearchField />
   <ProjectList />
   <OtherAside>
-    <AppFiltersWidget />
+    <AppFiltersWidget :is-mobile-widget="false" />
     <OtherInfoWidget />
   </OtherAside>
 </template>
 
 <script lang="ts" setup>
+import FilterButton from '@/shared/ui/elements/button/FilterButton.vue'
 import PageContentTitle from '@/shared/ui/elements/page-content-title/pageContentTitle.vue'
 import SearchField from '@/shared/ui/elements/searchField/searchField.vue'
 import AppFiltersWidget from '@/widgets/app-filters/ui/AppFiltersWidget.vue'
