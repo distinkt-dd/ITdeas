@@ -11,6 +11,7 @@
   text-transform: uppercase;
   border-radius: var(--border-radius-md);
   font-weight: 600;
+  max-width: max-content;
   @include fluid-text(14, 13);
   @include mobile {
   }

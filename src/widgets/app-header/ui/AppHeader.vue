@@ -20,20 +20,7 @@
       <span></span>
     </AppButton>
     <AppButton class="button header__burger button-square-44" @click="switchIsOpen" v-else>
-      <svg
-        width="44px"
-        height="44px"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M20 20L4 4.00003M20 4L4.00002 20"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-      </svg>
+      <CrossIcon />
     </AppButton>
   </header>
 </template>
@@ -55,6 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--color-accent);
     & span {
       display: block;
       width: 100%;
@@ -108,6 +96,7 @@ import { navigator } from '@shared/utils/navigator'
 import { linkActiveForButtons } from '@shared/utils/linkActiveForButtons'
 import { useBurgerStore } from '@/shared/ui/elements/button/lib/burger-stories'
 import { storeToRefs } from 'pinia'
+import CrossIcon from '@/shared/ui/elements/icons/cross-icon/CrossIcon.vue'
 
 const burgerStore = useBurgerStore()
 
