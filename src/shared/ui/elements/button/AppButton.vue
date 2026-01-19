@@ -17,6 +17,25 @@
 
   background: transparent;
 
+  &-danger {
+    background-color: var(--color-red);
+    color: var(--color-text-main);
+    border: solid var(--border-width-sm) var(--color-red);
+
+    @include hover {
+      background-color: transparent;
+    }
+
+    &-transparent {
+      background-color: transparent;
+      color: var(--color-text-main);
+      border: solid var(--border-width-sm) var(--color-red);
+      @include hover {
+        background-color: var(--color-red);
+      }
+    }
+  }
+
   &-square-44 {
     border-radius: 0;
     border: none;
