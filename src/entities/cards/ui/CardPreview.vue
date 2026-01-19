@@ -57,6 +57,7 @@
 
 <style lang="scss" scoped>
 .card {
+  cursor: pointer;
   --border-card: var(--border-width-sm) solid var(--color-border-main);
   min-height: 250px;
   max-width: 100%;
