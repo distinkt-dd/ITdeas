@@ -1,12 +1,5 @@
-<template>
-  <h2>{{ pageTitle }}</h2>
-</template>
+<template>sdfsdf</template>
 
-<script lang="ts" setup>
-import { useRoute } from 'vue-router'
-const route = useRoute()
-
-const pageTitle: string | undefined = route.meta?.bodyTitle
-</script>
+<script lang="ts" setup></script>
 
 <style scoped></style>

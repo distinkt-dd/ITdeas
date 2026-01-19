@@ -4,5 +4,7 @@ import { useBurgerStore } from '../ui/elements/button/lib/burger-stories'
 export const navigator = (router: Router, route: string): void => {
   const burgerStore = useBurgerStore()
   router.push(route)
-  burgerStore.setIsOpen()
+  if (burgerStore.getIsOpen) {
+    burgerStore.setIsOpen()
+  }
 }

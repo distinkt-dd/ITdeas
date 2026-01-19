@@ -1,4 +1,5 @@
 import AddingIdeasPage from '@/pages/AddingIdeasPage.vue'
+import FullIdeaCardPage from '@/pages/FullIdeaCardPage.vue'
 import AppAside from '@/widgets/app-aside/ui/AppAside.vue'
 import AppHeader from '@/widgets/app-header/ui/AppHeader.vue'
 import AuthPage from '@pages/AuthPage.vue'
@@ -33,6 +34,20 @@ const routes: RouteRecordRaw[] = [
     meta: {
       layout: 'sign',
       title: 'ITdeas | 404',
+    },
+  },
+  {
+    path: '/full-card',
+    name: 'FullCardDescription',
+    component: FullIdeaCardPage,
+    meta: {
+      layout: 'main',
+      title: 'ITdeas | Карточка проекта',
+      components: {
+        header: AppHeader,
+        aside: AppAside,
+      },
+      bodyTitle: 'Карточка проекта',
     },
   },
   {

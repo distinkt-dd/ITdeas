@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="navigator(router, '/full-card')">
     <AppSubstrate class="card__substrate">
       <div class="card__user">
         <ProfileIcon class="card__user-profileicon" />
@@ -197,6 +197,7 @@
 </style>
 <script setup lang="ts">
 import MoreIcon from '@/shared/ui/elements/icons/more-icon/MoreIcon.vue'
+import { navigator } from '@/shared/utils/navigator'
 import AppButton from '@shared/ui/elements/button/AppButton.vue'
 import HearthIcon from '@shared/ui/elements/icons/hearth-icon/HearthIcon.vue'
 import ProfileIcon from '@shared/ui/elements/icons/profilebar-icon/ProfileIcon.vue'
@@ -204,9 +205,10 @@ import AppSkill from '@shared/ui/elements/skill/AppSkill.vue'
 import AppSubstrate from '@shared/ui/elements/substrate/AppSubstrate.vue'
 import ViewsIcon from '@shared/ui/elements/views/ViewsIcon.vue'
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 const isLiked = ref(false)
 
