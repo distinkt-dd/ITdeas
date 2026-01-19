@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     // vueDevTools(),
   ],
+  base: '/ITdeas/',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue'],
     alias: {

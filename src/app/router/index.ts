@@ -13,7 +13,7 @@ import RegistrationPage from '@pages/RegistrationPage.vue'
 import SettingsProfilePage from '@pages/SettingsProfilePage.vue'
 import type { Component } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -191,7 +191,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   linkActiveClass: 'active',
   linkExactActiveClass: 'active',

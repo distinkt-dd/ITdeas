@@ -16,8 +16,10 @@
     "format": "prettier --write src/",
     "prepare": "husky",
     "check": "npm run lint && npm run format",
-    "commit": "npm run check && cz"
+    "commit": "npm run check && cz",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://distinkt-dd.github.io/ITdeas/",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
